@@ -83,7 +83,7 @@ function addSite() {
 // display Fun
 function displaySites() {
   if (sites.length > 0) {
-    document.getElementById("thead").innerHTML = ` <th >Index</th>
+    document.getElementById("thead").innerHTML = ` <th >ID</th>
         <th>Website Name</th>
         <th>Visit Site</th>
         <th>Update </th>
@@ -96,7 +96,7 @@ function displaySites() {
   var trs = "";
   for (var i = 0; i < sites.length; i++) {
     trs += ` <tr>
-        <td>${i}</td>
+        <td>${i+1}</td>
         <td>${sites[i].name}</td>
         <td>
           <button onclick=""   class="add-btn btn_subb visit"><a href="${sites[i].url}" target="_blank"><i class="fa-solid fa-link"></i> Visit</a></button>
@@ -167,6 +167,7 @@ function update_Site(index) {
   siteName.value = sites[index].name;
   SiteURL.value = sites[index].url;
   btn_sub.innerHTML = "Update Site";
+  window.scrollBy(0,-800)
 }
 function searchSite() {
   var searchTerm = search.value;
@@ -175,7 +176,7 @@ function searchSite() {
     if (sites[i].name.toLowerCase().includes(searchTerm.toLowerCase())) {
       //if there is matching
       trs += ` <tr>
-        <td>${i}</td>
+        <td>${i+1}</td>
         <td>${sites[i].name}</td>
         <td>
           <button onclick=""   class="add-btn btn_subb visit"><a href="${sites[i].url}" target="_blank"><i class="fa-solid fa-link"></i> Visit</a></button>
