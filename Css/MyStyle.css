@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    background-image: linear-gradient(rgba(24, 23, 23, 0.192), rgba(102, 126, 233, 0.63)),
+        url(../images/pexels-photo-2088205.webp);
+
+    background-position: center center;
+    background-size: cover;
+    /* height: 100vh; */
+}
+
+.Bookmarker {
+    padding-top: 50px;
+    font-size: 55px;
+    font-family: 'Pacifico', cursive;
+    color: #5D3587;
+}
+
+.bookmark {
+    z-index: 0;
+    transition: all 1s;
+}
+
+.layer {
+    width: 290px;
+    height: 22px;
+    background-color: #a5ccf5d2;
+    top: 65%;
+    z-index: -1;
+    border: 2px solid transparent;
+    border-radius: 4px;
+
+
+
+}
+
+.bookmark:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #7962bec4;
+    margin-top: 30px;
+    border: 1px dotted transparent;
+    border-radius: 15px;
+}
+
+.fa-solid {
+    color: #5D3587;
+    font-size: 20px;
+}
+
+#second_p {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: rgba(29, 28, 28, 0.808);
+}
+
+.form-label {
+    font-size: 17px;
+    font-family: cursive;
+}
+
+.btn_subb {
+    padding: 8px 18px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: #5D3587;
+    font-size: 17px;
+    font-weight: bold;
+    
+}
+
+.btn_subb:hover {
+    background-color: #d6c1db;
+}
+
+.home2 {
+    /* background-color: #FFF3E6; */
+    background-color: #FFEEF4;
+}
+
+.visit a {
+    text-decoration: none;
+    color: #5D3587;
+}
+
+.theadcolor th {
+    color: #5D3587 !important;
+    font-family: 'Pacifico', cursive;
+}
+
+.rowOfTable td {
+    color: rgba(82, 81, 81, 0.781);
+    font-size: 18px;
+    font-weight: 700;
+    font-family:cursive;
+}

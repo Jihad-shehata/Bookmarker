@@ -1,0 +1,134 @@
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMarker</title>
+    <link rel="icon" href="../CRUDS 2 Assignment/images/5585309.png">
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/all.min.css">
+    <link rel="stylesheet" href="./Css/MyStyle.css">
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px white;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #823f91;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: white;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Signika+Negative&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="home min-vh-100">
+        <div class="container">
+            <div class="bookmark d-flex justify-content-center align-items-center position-relative overflow-auto">
+                <p class="Bookmarker ">Bookmarker</p>
+                <div class="layer position-absolute"></div>
+            </div>
+            <div class="line"></div>
+            <div class="bookmark_p mt-4 mb-5  text-center">
+                <p><i class="fa-solid fa-bookmark pe-2"></i><span id="second_p">Bookmark your favorite sites</span><i
+                        class="fa-solid fa-bookmark ps-2"></i></p>
+            </div>
+            <div class="inputs">
+                <div class="mb-3">
+                    <label for="validationCustom01" class="form-label "><i class="fa-solid fa-book"></i> Site
+                        Name</label>
+                    <input type="text" class="form-control " id="validationCustom01" placeholder="Bookmark Name"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="basic-url" class="form-label"><i class="fa-solid fa-link"></i> Your Site URL</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                        <input type="text" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3 basic-addon4">
+                    </div>
+
+                </div>
+            </div>
+            <div class="btn_Submit text-center mt-5">
+                <button onclick=" addSite()" id="btn_sub" class="btn_subb">Submit</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="home2 min-vh-100 pt-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <input type="text" onkeyup="searchSite()" id="searchInput" class="form-control w-50 m-auto mb-5  "
+                        placeholder="Search...">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12 col-sm-6">
+                    <table class="table text-secondary text-center my-5">
+                        <thead id="thead" class="theadcolor">
+                    
+                        </thead>
+                        <tbody id="tBody" class="rowOfTable">
+                    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./JS/MyScript.js"></script>
+</body>
+
+</html>
