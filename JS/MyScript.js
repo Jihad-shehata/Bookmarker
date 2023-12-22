@@ -171,7 +171,6 @@ function update_Site(index) {
 function searchSite() {
   var searchTerm = search.value;
   var trs = "";
-
   for (var i = 0; i < sites.length; i++) {
     if (sites[i].name.toLowerCase().includes(searchTerm.toLowerCase())) {
       //if there is matching
@@ -179,10 +178,10 @@ function searchSite() {
         <td>${i}</td>
         <td>${sites[i].name}</td>
         <td>
-          <button onclick=""   class="add-btn"><a href="${sites[i].url}" target="_blank">Visit</a></button>
+          <button onclick=""   class="add-btn btn_subb visit"><a href="${sites[i].url}" target="_blank"><i class="fa-solid fa-link"></i> Visit</a></button>
         </td>
         <td>
-          <button onclick="update_Site(${i})"   class="add-btn">Update</button>
+          <button onclick="update_Site(${i})"   class="add-btn btn_subb">Update</button>
         </td>
         <td>
           <button onclick="delete_product(${i})"  class="btn btn-outline-danger">Delete</button>
