@@ -27,6 +27,7 @@ function validateURL(url) {
 }
 // Submit Function
 function addSite() {
+  
   if (validateSiteName(siteName.value) && validateURL(SiteURL.value)) {
     //console.log("bravoo")
     var Site = {
@@ -78,7 +79,10 @@ function addSite() {
     displaySites();
     localStorage.setItem("Sites", JSON.stringify(sites));
     clearForm();
+  } else {
+    Swal.fire("Please Enter Valid Site Details");
   }
+  emptyInput();
 }
 // display Fun
 function displaySites() {
@@ -96,10 +100,12 @@ function displaySites() {
   var trs = "";
   for (var i = 0; i < sites.length; i++) {
     trs += ` <tr>
-        <td>${i+1}</td>
+        <td>${i + 1}</td>
         <td>${sites[i].name}</td>
         <td>
-          <button onclick=""   class="add-btn btn_subb visit"><a href="${sites[i].url}" target="_blank"><i class="fa-solid fa-link"></i> Visit</a></button>
+          <button onclick=""   class="add-btn btn_subb visit"><a href="${
+            sites[i].url
+          }" target="_blank"><i class="fa-solid fa-link"></i> Visit</a></button>
         </td>
         <td>
           <button onclick="update_Site(${i})"   class="btn_subb">Update</button>
@@ -167,7 +173,7 @@ function update_Site(index) {
   siteName.value = sites[index].name;
   SiteURL.value = sites[index].url;
   btn_sub.innerHTML = "Update Site";
-  window.scrollBy(0,-800)
+  window.scrollBy(0, -800);
 }
 function searchSite() {
   var searchTerm = search.value;
@@ -176,10 +182,12 @@ function searchSite() {
     if (sites[i].name.toLowerCase().includes(searchTerm.toLowerCase())) {
       //if there is matching
       trs += ` <tr>
-        <td>${i+1}</td>
+        <td>${i + 1}</td>
         <td>${sites[i].name}</td>
         <td>
-          <button onclick=""   class="add-btn btn_subb visit"><a href="${sites[i].url}" target="_blank"><i class="fa-solid fa-link"></i> Visit</a></button>
+          <button onclick=""   class="add-btn btn_subb visit"><a href="${
+            sites[i].url
+          }" target="_blank"><i class="fa-solid fa-link"></i> Visit</a></button>
         </td>
         <td>
           <button onclick="update_Site(${i})"   class="add-btn btn_subb">Update</button>
@@ -190,5 +198,11 @@ function searchSite() {
       </tr>`;
     }
     document.getElementById("tBody").innerHTML = trs;
+  }
+}
+// if inputs submitted empty
+function emptyInput() {
+  if (siteName.value == "" || SiteURL.value == "") {
+    Swal.fire("Please Enter Your Site Details");
   }
 }
