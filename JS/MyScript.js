@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
 function validateSiteName(site_Name) {
   var siteNameRegEX = /^[A-Za-z_][A-Za-z_0-9]{1,39}$/;
   if (siteNameRegEX.test(site_Name) == false) {
-    Swal.fire("Please Valid Site Name");
+    Swal.fire("Please Enter Valid Site Name");
   }
   return siteNameRegEX.test(site_Name);
 }
@@ -27,7 +27,7 @@ function validateURL(url) {
   var URL_RegEX =
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
   if (URL_RegEX.test(url) == false) {
-    Swal.fire("Please Valid Site URL");
+    Swal.fire("Please Enter Valid Site URL");
   }
   return URL_RegEX.test(url);
 }
@@ -87,10 +87,6 @@ function addSite() {
     localStorage.setItem("Sites", JSON.stringify(sites));
     clearForm();
   }
-  elseif(
-    validateSiteName(siteName.value) == false &&
-      validateURL(SiteURL.value) == false
-  );
 }
 // display Fun
 function displaySites() {
