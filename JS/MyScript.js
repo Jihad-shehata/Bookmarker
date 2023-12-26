@@ -18,17 +18,24 @@ window.addEventListener("load", function () {
 // Vlidation Functions
 function validateSiteName(site_Name) {
   var siteNameRegEX = /^[A-Za-z_][A-Za-z_0-9]{1,39}$/;
+  if (siteNameRegEX.test(site_Name) == false) {
+    Swal.fire("Please Valid Site Name");
+  }
   return siteNameRegEX.test(site_Name);
 }
 function validateURL(url) {
   var URL_RegEX =
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+  if (URL_RegEX.test(url) == false) {
+    Swal.fire("Please Valid Site URL");
+  }
   return URL_RegEX.test(url);
 }
 // Submit Function
 function addSite() {
-  
-  if (validateSiteName(siteName.value) && validateURL(SiteURL.value)) {
+  if (siteName.value == "" || SiteURL.value == "") {
+    Swal.fire("Please Enter Your Site Details");
+  } else if (validateSiteName(siteName.value) && validateURL(SiteURL.value)) {
     //console.log("bravoo")
     var Site = {
       name: siteName.value,
@@ -79,10 +86,11 @@ function addSite() {
     displaySites();
     localStorage.setItem("Sites", JSON.stringify(sites));
     clearForm();
-  } else {
-    Swal.fire("Please Enter Valid Site Details");
   }
-  emptyInput();
+  elseif(
+    validateSiteName(siteName.value) == false &&
+      validateURL(SiteURL.value) == false
+  );
 }
 // display Fun
 function displaySites() {
@@ -201,8 +209,8 @@ function searchSite() {
   }
 }
 // if inputs submitted empty
-function emptyInput() {
-  if (siteName.value == "" || SiteURL.value == "") {
-    Swal.fire("Please Enter Your Site Details");
-  }
-}
+// function emptyInput() {
+//   if (siteName.value == "" || SiteURL.value == "") {
+//     Swal.fire("Please Enter Your Site Details");
+//   }
+// }
